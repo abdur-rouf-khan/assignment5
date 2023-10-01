@@ -1,9 +1,8 @@
 const express = require('express');
-const blogController = require("../controllers/blogController");
-const commentController = require("../controllers/commentController");
-const portfolioController = require("../controllers/portfolioController");
-const productController = require("../controllers/productController");
-const messageController = require("../controllers/messageController");
+const adminController = require("../controllers/adminController");
+const postController = require("../controllers/postController");
+const subAdminController = require("../controllers/subAdminController");
+const userController = require("../controllers/userController");
 const router = express.Router();
 
 
@@ -14,37 +13,30 @@ const router = express.Router();
 
 
 
-//blogController
-router.get("/blogcreate",blogController.createblog);
-router.get("/blogread",blogController.readblog);
-router.get("/blogupdate",blogController.updateblog);
-router.get("/blogdelete",blogController.deleteblog);
+//admin Controller
+router.get("/admincreate",adminController.createadmin);
+router.get("/adminread",adminController.readadmin);
+router.get("/adminupdate",adminController.updateadmin);
+router.get("/admindelete",adminController.deleteadmin);
 //=============================================
-//commentController
-router.get("/createcomm",commentController.createcomm);
-router.get("/readcomm",commentController.readcomm);
-router.get("/updatecomm",commentController.updatecomm);
-router.get("/deletecomm",commentController.deletecomm);
+//post Controller
+router.get("/createpost",postController.createpost);
+router.get("/readpost",postController.readpost);
+router.get("/updatepost",postController.updatepost);
+router.get("/deletepost",postController.deletepost);
 //=============================================
-//messageController
-router.get("/createmess",messageController.createmess);
-router.get("/reademess",messageController.readmess);
-router.get("/updatemess",messageController.updatemess);
-router.get("/deletemess",messageController.deletemess);
+//sub admin Controller
+router.get("/createsubadmin",subAdminController.createsubAdmin);
+router.get("/readsubadmin",subAdminController.readsubAdmin);
+router.get("/updatesubadmin",subAdminController.updatesubAdmin);
+router.get("/deletesubadmin",subAdminController.deletesubAdmin);
 //=============================================
-//portfolioController
-router.get("/creatport",portfolioController.createport);
-router.get("/readport",portfolioController.readport);
-router.get("/updateport",portfolioController.updateport);
-router.get("/deleteport",portfolioController.deleteport);
-//===================================
-//messageController
-router.get("/createpro",productController.createpro);
-router.get("/readpro",productController.readpro);
-router.get("/updatepro",productController.updatepro);
-router.get("/deletepro",productController.deletepro);
-
-//=============================================
+//user Controller
+router.get("/createuser",userController.createuser);
+router.get("/readuser",userController.readuser);
+router.get("/updateuser",userController.updateuser);
+router.get("/deleteuser",userController.deleteuser);
+//===============================
 
 
 

@@ -29,7 +29,7 @@ const limiter = rateLimit({
     max: 100 // Limit each IP to 100 requests per windowMs
 });
 app.use(limiter);
-app.use('/api/v1',routes);
+app.use('/api',routes);
 
 //undefiend
 app.use('/*',function (req,res){
